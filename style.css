@@ -1,12 +1,14 @@
-.calculator {
+.gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-  margin: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
-button {
-  font-size: 18px;
-  padding: 10px;
+.gallery img {
+  max-width: 100%;
+  height: auto;
+}
+
+.active {
+  border: 2px solid red;
 }

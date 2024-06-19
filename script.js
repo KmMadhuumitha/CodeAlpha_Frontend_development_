@@ -1,44 +1,12 @@
-let screen = document.getElementById("screen");
-let input = ""; 
-let result = null; 
+const images = document.querySelectorAll(".gallery img");
+let activeImageIndex = 0;
 
-function insertNumber(number) {
-  input += number;
-  screen.value = input;
-}
+images[activeImageIndex].classList.add("active");
 
-function insertOperator(operator) {
-  if (!input) return;
-
-  if (operator === '.') {
-  
-    if (input.includes('.')) {
-      return;
-    }
-  }
-
-  input += operator;
-  screen.value = input;
-}
-
-function calculate() {
-
-  if (!input) return;
-
-  try {
-    result = eval(input);
-  } catch (error) {
-    clearScreen();
-    screen.value = 'Error';
-    return;
-  }
-
- 
-  screen.value = result;
-  input = result.toString();
-}
-
-function clearScreen() {
-  input = "";
-  screen.value = "";
-}
+images.forEach((image, index) => {
+    image.addEventListener("click", () => {
+        images[activeImageIndex].classList.remove("active");
+        activeImageIndex = index;
+        images[activeImageIndex].classList.add("active");
+    });
+});

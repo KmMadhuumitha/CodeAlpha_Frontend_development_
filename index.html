@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    </b><h1 align="center">GALLERY</h1></b>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj0y6Vhjobxd6Bkhwc5tQ8qHR4yXifC_oovQ&s" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS8ov18yRrD0Iv235z_7wP8lfld1h1A-2BFF9k3DtMwi6G3dbzzRXMHspYeId0YGcNJDc&usqp=CAU" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.squarespace-cdn.com/content/v1/5feb6d2cab06677bba637eba/d72ddeeb-d2bd-4779-99be-8bbd6845fbc8/LAM+images+%284%29.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/008/062/987/small_2x/travel-to-the-beautiful-colorful-majestic-waterfall-in-national-park-forest-during-autumn-soft-water-of-the-stream-in-the-natural-park-photo.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://miro.medium.com/v2/resize:fit:1024/1*bFZXo1Sdhs_oZggn_uFTvw.jpeg" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5CIx7X2497PDQsxoWQi-f05mN8kRj8rWejisFJGu3j8P2zHq_eTbTe0AO7R8K52rJ7fc&usqp=CAU" alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKy5mdobR--L0jCsz_UGmQBVpXMvyHq0pGlA&s" alt="Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/videos/thumbnails/originals/06/cc/f3/06ccf33745dbaf41739bf59e1896ba6c.0000000.jpg" alt="Image 6">
+        </div>
+        <div class="gallery-item">
+            <img src="https://img.fixthephoto.com/blog/images/gallery/news_preview_mob_image__preview_579.jpg" alt="Image 7">
+        </div>
+        <div class="gallery-item">
+            <img src="hhttps://www.toehold.in/academy/wp-content/uploads/sites/7/2020/05/Scljalandsfoss-1-300x300.jpg" alt="Image 8 ">
+        </div>
+    </div>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 0;
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                showImage(currentIndex);
+            });
+        });
+
+        function showImage(index) {
+            galleryItems.forEach((item, i) => {
+                if (i === index) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
